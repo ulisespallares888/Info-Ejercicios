@@ -1,0 +1,100 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+    
+        {
+            "type": "java",
+            "name": "Challengeinit",
+            "request": "launch",
+            "mainClass": "Challengeinit",
+            "projectName": "N1-Iniciado-JAVA-JEDI_28c17e92"
+        },
+        {
+            "type": "java",
+            "name": "Challenge",
+            "request": "launch",
+            "mainClass": "Challenge",
+            "projectName": "N1-Iniciado-JAVA-JEDI_28c17e92"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Acumulador",
+            "request": "launch",
+            "mainClass": "Acumulador",
+            "projectName": "N1-Iniciado-JAVA-JEDI_28c17e92"
+        },
+        {
+            "type": "java",
+            "name": "CalculoDivisivilidad",
+            "request": "launch",
+            "mainClass": "CalculoDivisivilidad",
+            "projectName": "N1-Iniciado-JAVA-JEDI_28c17e92"
+        },
+        {
+            "type": "java",
+            "name": "Caracteres",
+            "request": "launch",
+            "mainClass": "Caracteres",
+            "projectName": "N1-Iniciado-JAVA-JEDI_28c17e92"
+        },
+        {
+            "type": "java",
+            "name": "MiNombreEdad",
+            "request": "launch",
+            "mainClass": "MiNombreEdad",
+            "projectName": "N1-Iniciado-JAVA-JEDI_28c17e92"
+        },
+        {
+            "type": "java",
+            "name": "Multiplicacion",
+            "request": "launch",
+            "mainClass": "Multiplicacion",
+            "projectName": "N1-Iniciado-JAVA-JEDI_28c17e92"
+        },
+        {
+            "type": "java",
+            "name": "NombreBebida",
+            "request": "launch",
+            "mainClass": "NombreBebida",
+            "projectName": "N1-Iniciado-JAVA-JEDI_28c17e92"
+        },
+        {
+            "type": "java",
+            "name": "Potencia",
+            "request": "launch",
+            "mainClass": "Potencia",
+            "projectName": "N1-Iniciado-JAVA-JEDI_28c17e92"
+        },
+        {
+            "type": "java",
+            "name": "SumaBis",
+            "request": "launch",
+            "mainClass": "SumaBis",
+            "projectName": "N1-Iniciado-JAVA-JEDI_28c17e92"
+        },
+        {
+            "type": "java",
+            "name": "SumarDosnuemos",
+            "request": "launch",
+            "mainClass": "SumarDosnuemos",
+            "projectName": "N1-Iniciado-JAVA-JEDI_28c17e92"
+        },
+        {
+            "type": "java",
+            "name": "TrianguloAsteriscos",
+            "request": "launch",
+            "mainClass": "TrianguloAsteriscos",
+            "projectName": "N1-Iniciado-JAVA-JEDI_28c17e92"
+        },
+    ]
+}
