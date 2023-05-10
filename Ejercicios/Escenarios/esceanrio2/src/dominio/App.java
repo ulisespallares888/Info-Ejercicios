@@ -59,7 +59,7 @@ public class App {
         productoNuevo.setDescripcion(getScanner().next());
         productoNuevo.setPrecioActual(crearPrecioActual());
         System.out.println("INGRESE LA CATEGORIA DEL PRODUCTO : ");
-        Categoria cat = CategoriasDB.buscarCategoria(getScanner().next());
+        Categoria cat = buscarCategoria(getScanner().next());
         if (cat == null) {
             productoNuevo.setCategoria(crearCategoriaEnProductos(productoNuevo,cat));
         }else {
@@ -100,7 +100,7 @@ public class App {
                 } else if (opcion.equals("2")) {
                     System.out.println("INGRESE UNA NUEVA CATEGORIA");
                     opcion = getScanner().next();
-                    cat = CategoriasDB.buscarCategoria(opcion);
+                    cat = buscarCategoria(opcion);
                     if (cat != null) {
                         productoNuevo.setCategoria(cat);
                     }
@@ -164,7 +164,7 @@ public class App {
 
     private static List<Producto> listarProductosPorCategoria( String categoriaBuscar){
         List<Producto> productosPorCategoria = new ArrayList<Producto>();
-        Categoria categoriaBuscada = CategoriasDB.buscarCategoria(categoriaBuscar);
+        Categoria categoriaBuscada = buscarCategoria(categoriaBuscar);
         if(categoriaBuscada != null) {
             if (categoriaBuscada.isestaDisponible() == true) {
                 for (int i = 0; i < productos.size(); i++) {
@@ -209,6 +209,22 @@ public class App {
         }
 
     }
+
+    public static Categoria buscarCategoria(String nombre){
+        boolean encontrado = false;
+        int posicionDeCategoria = 0;
+        for (int i = 0; i < categorias.size() ;i++){
+            if(nombre.equals(categorias.get(i).getNombre())){
+                encontrado = true;
+                posicionDeCategoria = i;
+            }
+        }
+        if(encontrado){
+            return categorias.get(posicionDeCategoria);
+        } else  {
+            return null;}
+    }
+
     public static Scanner getScanner() {
         return scanner;
     }

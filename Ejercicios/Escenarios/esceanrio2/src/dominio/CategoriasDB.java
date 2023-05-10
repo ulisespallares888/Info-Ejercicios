@@ -20,20 +20,7 @@ public class CategoriasDB {
 
         return listaCatgorias;
     }
-    public static Categoria buscarCategoria(String nombre){
-        boolean encontrado = false;
-        int posicionDeCategoria = 0;
-        for (int i = 0; i < listaCatgorias.size() ;i++){
-            if(nombre.equals(listaCatgorias.get(i).getNombre())){
-                encontrado = true;
-                posicionDeCategoria = i;
-            }
-        }
-        if(encontrado){
-            return listaCatgorias.get(posicionDeCategoria);
-        } else  {
-            return null;}
-    }
+
 
 
 }
