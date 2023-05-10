@@ -42,8 +42,8 @@ public class App {
         switch (opcion){
             case "1":{ System.out.println(crearCategoria());System.out.println(categorias); break;}
             case "2":{ System.out.println(crearProducto()); break; }
-            case "3":{ productos.clear(); productos = ProductosDB.dameProductos(); System.out.println(productos);
-                cargarProductosEnCategorias(); productos.addAll(productosCreadosPorMi);break;}
+            case "3":{ productos.clear(); productos = ProductosDB.dameProductos(); productos.addAll(productosCreadosPorMi); System.out.println(productos);
+                cargarProductosEnCategorias(); break;}
             case "4":{ System.out.println("INGRESE CATEGORIA");System.out.println(listarProductosPorCategoria(getScanner().next())); break;}
             case "5":{ System.out.println(losCincoMasCaros()); break;}
             case "6":{ System.out.println(losCincoMasBaratos());break;}
@@ -64,6 +64,7 @@ public class App {
             productoNuevo.setCategoria(crearCategoriaEnProductos(productoNuevo,cat));
         }else {
             productoNuevo.setCategoria(cat);
+        }
             System.out.println("¿TIENE DESCUENTO? Si ingrese 1 - No ingrese 0: ");
             int quieroDescuento = getScanner().nextInt();
             if (quieroDescuento == 1){
@@ -72,9 +73,8 @@ public class App {
             productosCreadosPorMi.add(productoNuevo);
             productos.addAll(productosCreadosPorMi);
             cargarProductosEnCategorias();
-        }
-        return productoNuevo;
 
+        return productoNuevo;
 
     }
 
@@ -82,24 +82,30 @@ public class App {
         while(cat == null) {
             System.out.println("LA CATEGORIA QUE INGRESO NO EXISTE");
             System.out.println("LAS CATEGORIAS DISPONIBLES SON");
-            for (int i=0; i< categorias.size();i++){System.out.println(categorias.get(i).getNombre());}
-            String opcion="";
-            while(cat ==null) {
+            for (int i = 0; i < categorias.size(); i++) {
+                System.out.println(categorias.get(i).getNombre());
+            }
+            String opcion = "";
+            while (cat == null) {
                 System.out.println("¿DESEA CREAR UNA CATEGORIA NUEVA? SI/NO/INGRESAR DE NUEVO (0/1/2)");
                 opcion = getScanner().next();
-                switch (opcion) {
-                    case "0": {
-                        productoNuevo.setCategoria(crearCategoria());break;}
-                    case "1": {
-                        System.out.println("NO SE PUDO CREAR EL PRODUCTO"); productoNuevo = null; System.gc(); break;}
-                    case "2": {
-                        opcion = getScanner().next();
-                        cat = CategoriasDB.buscarCategoria(opcion);
-                        if(cat!=null){ productoNuevo.setCategoria(cat);}
-                        break;
+                if (opcion.equals("0")) {
+                    productoNuevo.setCategoria(crearCategoria());
+                    break;
+                } else if (opcion.equals("1")) {
+                    System.out.println("NO SE PUDO CREAR EL PRODUCTO");
+                    productoNuevo = null;
+                    System.gc();
+                    break;
+                } else if (opcion.equals("2")) {
+                    System.out.println("INGRESE UNA NUEVA CATEGORIA");
+                    opcion = getScanner().next();
+                    cat = CategoriasDB.buscarCategoria(opcion);
+                    if (cat != null) {
+                        productoNuevo.setCategoria(cat);
                     }
                 }
-            }
+            } break;
         }
         return productoNuevo.getCategoria();
     }
